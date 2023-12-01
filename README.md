@@ -1,36 +1,42 @@
-# Project-Diabetes-130-US-hospitals-1999-20
+# Project-Diabetes-130-US-hospitals-1999-2008
 
 ## Description
 
-Le dataset représente dix années (1999-2008) de soins cliniques dans 130 hôpitaux américains et réseaux de distribution intégrés. Chaque ligne concerne les dossiers hospitaliers de patients diagnostiqués diabétiques, qui ont subi des examens de laboratoire, pris des médicaments et séjourné jusqu'à 14 jours. L'objectif est de déterminer la réadmission précoce du patient dans les 30 jours suivant sa sortie de l'hôpital. Le problème est important pour les raisons suivantes. Malgré des preuves de haute qualité montrant une amélioration des résultats cliniques pour les patients diabétiques qui bénéficient de diverses interventions préventives et thérapeutiques, de nombreux patients n'en bénéficient pas. Cette situation peut être partiellement attribuée à une gestion arbitraire du diabète en milieu hospitalier, où le contrôle de la glycémie n'est pas pris en compte. L'absence de prise en charge adéquate du diabète augmente non seulement les coûts de gestion pour les hôpitaux (car les patients sont réadmis), mais a également un impact sur la morbidité et la mortalité des patients, qui peuvent être confrontés à des complications associées au diabète.
+This project addresses the critical issue of early hospital readmissions among diabetes patients, a growing global health concern. With 463 million adults affected by diabetes as of 2019 and an expected rise to 700 million by 2045, effective management of diabetes is crucial. Our study spans 10 years of data (1999-2008) from 130 US hospitals, focusing on diabetic patients who underwent various treatments and had hospital stays of up to 14 days. The aim is to identify the primary factors leading to early readmission.
+
+To address this, we employed a Random Forest algorithm with a class balancing parameter, which proved most efficient in our case. A key strength of our solution is its ability to explain the likelihood of readmission using SHAP (SHapley Additive exPlanations), a Python library that reveals the positive or negative impact of each feature on our prediction. This approach not only ensures accuracy but also provides transparency and ease of use. 
+
+The solution is already accessible and testable via our website : https://project-diabetes-130-us-hospitals-1999-2008-f2azfjbcodx3anldgj.streamlit.app/
 
 ## Installation
 
-Ce projet nécessite Python 3.10.12. Assurez-vous que vous avez la bonne version de Python installée sur votre système.
+This project requires Python 3.10.12. Ensure you have the correct version of Python installed on your system.
 
-## Configuration de l'Environnement
+## Environnement Setup
 
-Il est recommandé d'utiliser un environnement virtuel pour éviter les conflits de dépendances avec d'autres projets. Pour créer et activer un environnement virtuel :
+It is recommended to use a virtual environment to avoid dependency conflicts with other projects. To create and activate a virtual environment:
 
-Sur Unix ou MacOS :
-python3 -m venv mon_env
-source mon_env/bin/activate
+On Unix or MacOS:
+python3 -m venv my_env
+source my_env/bin/activate
 
-Sur Windows :
-python -m venv mon_env
-mon_env\Scripts\activate
+On Windows:
+python -m venv my_env
+my_env\Scripts\activate
 
-## Installation des Dépendances
+## Installing Dependencies
 
-Installez toutes les dépendances nécessaires en exécutant :
+Install all necessary dependencies by running:
 pip install -r requirements.txt
 
-## Utilisation
+## Usage
 
-Pour lancer notre WebApp, naviguez jusqu'au répertoire du projet et lancez la commande suivante :
+To try our solution, you can directly visit our website : https://project-diabetes-130-us-hospitals-1999-2008-f2azfjbcodx3anldgj.streamlit.app/
+
+To launch our WebApp locally, navigate to the project directory and run the following command:
 streamlit run .\app\Home.py
 
-## Fonctionnalités
+## Features
 
 🆕 Evaluate the readmission risk for a new patient based on clinical data
 
