@@ -46,8 +46,7 @@ def display_table(df):
 
 
 # Function to display figures for variable distribution
-def display_figures(data):
-    st.write("### Distribution Figures")
+def display_figures(data):    
 
     # Set the Seaborn style
     sns.set_style("darkgrid")
