@@ -31,6 +31,20 @@ def displayPDF(file):
     # Displaying File
     st.markdown(pdf_display, unsafe_allow_html=True)
 
+def get_base64_of_pdf(pdf_file):
+    with open(pdf_file, "rb") as f:
+        data = base64.b64encode(f.read()).decode('utf-8')
+    return data
+
+def displayPDF2():
+    # Ajout d'un lien vers un PDF
+    pdf_file = "app/asset/Python_DIA1_ESTIGNARD_COCKENPOT_MELL_MARIOLLE.pdf"    
+    pdf_base64 = get_base64_of_pdf(pdf_file)
+
+    # Intégrer le PDF dans la page
+    pdf_html = f'<embed src="data:application/pdf;base64,{pdf_base64}" width="700" height="1000" type="application/pdf">'
+    st.components.v1.html(pdf_html, height=1000)
+
 st.markdown("""
     <style>
     div.stButton > button:first-child {
@@ -49,7 +63,7 @@ st.markdown("""
 st.write("\n" * 15)
 
 if st.button("📑 Detailed presentation", key="1"):
-     pass
+     displayPDF2()
 
 if st.button("📊 Training dataset", key="2"):
     st.markdown("https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008")
